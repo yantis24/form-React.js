@@ -9,18 +9,16 @@ export default class Form extends Component {
     }
 
 change = x => {
-    // this.props.onChange({[target.name]: target.value });
     this.setState({
      [x.target.name]: x.target.value
     });
 };
 
-onSubmit = (e) => {
-    e.preventDefault();
-    // this.props.onSubmit(this.state)
+onSubmit = (v) => {
+    v.preventDefault();
     this.setState({
-        firstName:"",
-        lastName:"",
+        firstName:'',
+        lastName:'',
         hobby:''
     });
 };
@@ -63,9 +61,10 @@ onSubmit = (e) => {
                 </select>
             </label>
            
-             <br/>
+            <br/>
             <button className="button" type='submit' onClick={e => this.onSubmit(e)}>Submit</button>
-
+            <br/>
+            <textarea placeholder="Your details will be display here..."></textarea>
         </form>
 
     );  

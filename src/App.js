@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import Form from './Form';
 import './App.css';
 
@@ -17,7 +16,7 @@ class App extends Component {
     })
   }
   onSubmit = inputs => {
-    console.log("App comp got", inputs);
+    console.log(inputs);
   };
 
   render () {
