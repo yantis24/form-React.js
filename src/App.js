@@ -4,30 +4,40 @@ import './App.css';
 
 class App extends Component {
   state = {
-    data: {}
+    inputs:{}
   };
 
-  onChange = updatedValue => {
-    this.setState({
-      data: {
-        ...this.state.data,
-        ...updatedValue
-      }
-    })
-  }
+  // onChange = updatedValue => {
+  //   this.setState({
+  //     data: {
+  //       ...this.state.data,
+  //       ...updatedValue
+  //     }
+  //   })
+  // }
+
   onSubmit = inputs => {
-    console.log(inputs);
+    this.setState({inputs})
+    console.log({inputs});
   };
 
+  
   render () {
     return (
       <div className="App">
         <h3 className="header">Your Personal Details</h3>
         <Form onSubmit={inputs=> this.onSubmit(inputs)}/>
+        <p>
+          {JSON.stringify(this.state.inputs,null,2)}
+        </p>
+        
       </div>
     );
   }
 }
 
 
+
 export default App;
+
+

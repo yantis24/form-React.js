@@ -5,21 +5,24 @@ export default class Form extends Component {
     state = {
         firstName: '',
         lastName: '',
-        hobby:''
+        hobby:'',
+        summary:''
     }
 
-change = x => {
-    this.setState({
-     [x.target.name]: x.target.value
-    });
-};
+// userInput = (x) => {
+//     this.setState({
+//      [x.target.name]: x.target.value
+//     });
+// };
 
-onSubmit = (v) => {
-    v.preventDefault();
+onSubmit = (e) => {
+    e.preventDefault();
+    this.props.onSubmit(this.state);
     this.setState({
         firstName:'',
         lastName:'',
-        hobby:''
+        hobby:'',
+        summary:'',
     });
 };
 
@@ -33,7 +36,8 @@ onSubmit = (v) => {
                 type='text'
                 placeholder='First Name' 
                 value={this.state.firstName} 
-                onChange={x => this.change(x)}
+                onChange={e => this.setState({firstName: e.target.value})}
+                // onChange={x => this.userInput(x)}
                 />
             </label>
             <br/>
@@ -44,7 +48,8 @@ onSubmit = (v) => {
                 type='text'
                 placeholder='Last Name' 
                 value={this.state.lastName} 
-                onChange={x => this.change(x)}
+                onChange={e => this.setState({lastName: e.target.value})}
+                // onChange={x => this.userInput(x)}
                 />
             </label>
 
@@ -53,7 +58,9 @@ onSubmit = (v) => {
                 <select className="select"
                 name='hobby'
                 value={this.state.hobby}
-                onChange={x => this.change(x)}>
+                onChange = { e => this.setState({hobby: e.target.value})}
+                // onChange={x => this.userInput(x)}
+                >
                     <option value=''>Select from the list</option>
                     <option value='Travelling'>Travelling</option>
                     <option value='Cooking'>Cooking</option>
@@ -64,7 +71,13 @@ onSubmit = (v) => {
             <br/>
             <button className="button" type='submit' onClick={e => this.onSubmit(e)}>Submit</button>
             <br/>
-            <textarea placeholder="Your details will be display here..."></textarea>
+            <textarea 
+                name='summary'
+                placeholder="Your details will be display here..." 
+                value={this.state.summary}
+                onChange = { e => this.setState({summary: e.target.value})}
+                >
+            </textarea>
         </form>
 
     );  
