@@ -1,34 +1,27 @@
 .App {
   text-align: center;
-  width: 750px;
-  margin: 50px auto;
+  width: 100vh;
+  height: 100vh;
+  margin: 30px auto;
   font-family: 'Patua One', cursive;
-  background-color:#fff;
+  box-shadow: 0px 1.5px 5px rgba(200,200,200,.6); 
 }
 
-.header {
-  font-size: 34px;
-  color:#f06c00;
-  display: grid;
-  justify-items: left;
-  padding: 30px 15px;
-  background-color:#fff;
-}
-
-.header p {
-  font-size: 16px;
-}
 .title {
+  padding: 30px 0 3px 0;
   text-align: center;
   font-size: 32px;
-  color: #7c7c7c;
+  color: #4c4c4c;
+  margin-block-start: 0em;
 }
 
 .form {
   /* border-radius: 5px; */
+  width: 100vh;
   background-color: #fff;
-  padding: 30px;
-  margin: 10px auto;
+  margin: 5px auto;
+  padding: 0 40px 25px 40px;
+
 }
 
 .label {
@@ -53,7 +46,7 @@ input[type=text], select {
   font-size: 20px;
   font-weight: 600;
   width: 100%;
-  background-color: #adadad;
+  background-color: #f06c00;
   color: white;
   margin: 18px auto;
   padding: 14px 5px;
@@ -63,8 +56,24 @@ input[type=text], select {
   cursor: pointer;
 }
 
+.button-text {
+  display: -webkit-box;
+  font-size: 10px;
+  font-weight: 600;
+  width: 15%;
+  /* color:#f06c00; */
+  background-color: #f06c00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  margin: 14px auto 2px auto;
+  padding: 10px 1px;
+}
+
 .button:hover {
-  background-color: #7c7c7c;
+  background-color: #e89653;
 }
 
 textarea {
@@ -77,8 +86,8 @@ textarea {
 
 .select {
   height: 28px;
-  background-color: #adadad;
-  color: white;
+  /* background-color: #adadad; */
+  color:#adadad;
   /* background-color:#fd9900;
   color: white; */
   font-size: 16px;

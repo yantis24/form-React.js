@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Header from './components/Header';
 import './App.css';
 
 class App extends Component {
@@ -23,18 +24,26 @@ class App extends Component {
     });
 };
 
+  onSubmit2 = (x) => {
+    x.preventDefault();
+    this.setState({
+      summary:''
+    });
+  };
+
+  
   render () {
     return (
       
-      <div className="App">
-        <div className="header">
-          Sainsbury's
-          <p>Technical Test By Yanti Suryati</p>
-        </div>
-
-        <h3 className="title">Your Personal Details</h3>
-
+      <div> 
+        
+         <div className="App">
+        
+        <Header/>
+        
         <form className="form">
+       
+          <h3 className="title">Your Personal Details</h3>
             <label className="label">
             First Name: 
                 <input 
@@ -45,7 +54,6 @@ class App extends Component {
                 onChange={e => this.setState({firstName: e.target.value})}
                 />
             </label>
-           
             <label className="label">
             Last Name:
                 <input 
@@ -56,6 +64,7 @@ class App extends Component {
                 onChange={e => this.setState({lastName: e.target.value})}
                 />
             </label>
+          
 
             <label className="label">
             Hobby:
@@ -64,30 +73,28 @@ class App extends Component {
                 value={this.state.hobby}
                 onChange = { e => this.setState({hobby: e.target.value})}
                 >
-                    <option value=''>Select from the list</option>
-                    <option value='Travelling'>Travelling</option>
-                    <option value='Cooking'>Cooking</option>
-                    <option value='Coding'>Coding</option>
+                  <option value=''>Select from the list</option>
+                  <option value='Travelling'>Travelling</option>
+                  <option value='Cooking'>Cooking</option>
+                  <option value='Coding'>Coding</option>
                 </select>
             </label>
-           
-          
             <button className="button" type='submit' onClick={e => this.onSubmit(e)}>Submit</button>
-        
             <textarea 
                 name='summary'
                 placeholder="Your details will be displayed here..." 
                 value={this.state.summary}
-                onChange = { e => this.setState()}
+                onChange = { () => this.setState()}
                 >
             </textarea>
-        </form>
-
+            <button className="button-text" type='submit' onClick={x => this.onSubmit2(x)}>Cleared Text</button> 
+          </form>
+        </div>
       </div>
-    );
+     
+      );
+    }
   }
-}
-
 export default App;
 
 
