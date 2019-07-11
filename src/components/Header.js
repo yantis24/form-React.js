@@ -2,13 +2,10 @@ import React from 'react';
 import './Header.css';
 
 const Header = props => (
-    
-        <div className="header">   
+    <div className="header">   
         Sainsbury's
         <p>Technical Test By Yanti Suryati</p>
-        </div>
-
-
+    </div>
 );
 
 export default Header;

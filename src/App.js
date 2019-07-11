@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Header from './components/Header';
+import { useMediaQuery } from 'react-responsive';
 import './App.css';
 
 class App extends Component {
@@ -7,7 +8,7 @@ class App extends Component {
     firstName: '',
     lastName: '',
     hobby:'',
-    summary:''
+    summary:'',
 }
 
   onSubmit = (e) => {
@@ -31,18 +32,11 @@ class App extends Component {
     });
   };
 
-  
   render () {
-    return (
-      
-      <div> 
-        
-         <div className="App">
-        
+    return (   
+      <div className="App">
         <Header/>
-        
         <form className="form">
-       
           <h3 className="title">Your Personal Details</h3>
             <label className="label">
             First Name: 
@@ -51,8 +45,7 @@ class App extends Component {
                 type='text'
                 placeholder='First Name' 
                 value={this.state.firstName} 
-                onChange={e => this.setState({firstName: e.target.value})}
-                />
+                onChange={e => this.setState({firstName: e.target.value})}/>
             </label>
             <label className="label">
             Last Name:
@@ -61,18 +54,14 @@ class App extends Component {
                 type='text'
                 placeholder='Last Name' 
                 value={this.state.lastName} 
-                onChange={e => this.setState({lastName: e.target.value})}
-                />
+                onChange={e => this.setState({lastName: e.target.value})}/>
             </label>
-          
-
             <label className="label">
             Hobby:
                 <select className="select"
                 name='hobby'
                 value={this.state.hobby}
-                onChange = { e => this.setState({hobby: e.target.value})}
-                >
+                onChange = { e => this.setState({hobby: e.target.value})}>
                   <option value=''>Select from the list</option>
                   <option value='Travelling'>Travelling</option>
                   <option value='Cooking'>Cooking</option>
@@ -84,14 +73,11 @@ class App extends Component {
                 name='summary'
                 placeholder="Your details will be displayed here..." 
                 value={this.state.summary}
-                onChange = { () => this.setState()}
-                >
+                onChange = { () => this.setState()}>
             </textarea>
             <button className="button-text" type='submit' onClick={x => this.onSubmit2(x)}>Cleared Text</button> 
           </form>
-        </div>
       </div>
-     
       );
     }
   }
