@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Header from './components/Header';
-import { useMediaQuery } from 'react-responsive';
 import './App.css';
 
 class App extends Component {
